@@ -17,8 +17,11 @@
 
  2) DI(Dependency Injection, 의존성 주입) : 
 설정파일을 통해 객체간의 의존관게를 설정함으로서 코드의 재사용성을 높이고 모듈간 결합도를 낮춤.
+IoC에서 관리하고 있는 Bean들 중에서 필요한 것을 객체에 주입하는 것을 말한다.
+
  3) AOP(Aspect Object Programming, 관점 지향 프로그래밍) : 
 여러객체에 공통으로 적용할수 있는 기능을 구분함으로 재사용성을 높여주는 프로그래밍 기법.
+
  4) POJO(Plain Old Java Object) 방식 : 
 인터페이스를 직접 구현하거나 상속받을 필요가없어 기존 라이브러리를 지원하기 용이,
 객체가 가볍다. (즉 getter/setter를 가진 단순한 자바오브젝트를말함)
@@ -28,7 +31,7 @@
 - 아파치 오픈소스 빌드 툴
 - 해당 라이브러리가 작동하는데 필요한 다른 라이브러리들까지 관리하여 네트워크를 통해서 자동으로 다운받아줌
 - 프로젝트의 전체적인 라이프 사이클을 관리하는 도구
-
+#
 ##### 6.mvc패턴이란 (https://jseoposh.tistory.com/9)
 - Model, View, Controller의 약자
 - 하나의 프로젝트를 구성할때 그 구성요소를 세가지의 역할로 구분한 패턴
@@ -42,4 +45,13 @@
 > -> 컨트롤러,Controller
 >데이터와 사용자인터페이스 요소들을 잇는 다리역할.
 이벤트들을 처리하는 부분.
+#
+##### 7. 스프링 빈(spring Bean)(http://melonicedlatte.com/2021/07/11/232800.html)
+- Spring IoC컨테이너가 관리하는 자바 객체를 빈(Bean)이라는 용어로 부른다. -> 제어의 역전(IoC)과 관계있음
+- 자바 프로그래밍에서 Class를 생성하고 new를 입력하여 원하는 객체를 직접생성해서 사용했지만, Spring에 의하여 관리당하는 자바객체를 우리는 사용한다.
+- 즉, new 연산자로 어떤 객체를 생성했을때 그 객체는 빈이 아니다.
+- ApplicationContext.getBean()으로 얻어질수 있는 객체는 빈이다.
+- 어떻게 Spring IoC컨테이너에 빈을 등록할까.
+  1. Component Scanning (@ComponentScan, @Component 어노테이션 사용,@Component어노테이션에는 @Controller , @Service, @Repository이 포함된다.)
+  2. 빈 설정파일에 직접 빈을 등록(@Configuration, @Bean 어노테이션 사용)
  
